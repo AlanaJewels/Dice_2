@@ -1,0 +1,133 @@
+/* General Styles */
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #8B4D61; /* Dark purple background */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #333;
+}
+
+/* Container for main content */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+h1 {
+    color: #B33939; /* Dark Red */
+    margin-top: 20px;
+}
+
+/* Main Content Layout */
+.main-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+/*Dice Selection Panel 
+.dice-panel {
+    background-color: #ECE1D7; 
+    border: 2px solid #8B4D61; 
+    border-radius: 10px;
+    padding: 20px;
+    width: 40%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
+.dice-panel {
+    background-color: #ECE1D7;
+    padding: 20px;
+    width: 40%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 10px solid transparent;
+    background-size: cover;
+}
+
+
+
+.dice-panel h2 {
+    color: #8B4D61; /* Dark purple */
+}
+
+/* Input Group Styling */
+.input-group {
+    margin-bottom: 15px;
+}
+
+/* Dice Buttons Styling */
+.dice-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+button {
+    background-color: #B33939; /* Dark Red */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 25px; /* Rounder buttons */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #A12F2F; /* Slightly darker red on hover */
+}
+
+/* Custom Dice Form Styling */
+.custom-dice-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.custom-dice-form input {
+    width: 80%;
+    padding: 8px;
+    border: 2px solid #8B4D61;
+    border-radius: 5px;
+}
+
+/* Results Panel Styling */
+.results-panel {
+    background-color: #ECE1D7;
+    border: 2px solid #8B4D61;
+    border-image: url(tan-grunge-floral-4606882.webp);
+    border-radius: 10px;
+    padding: 20px;
+    width: 40%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.results-panel h2 {
+    color: #8B4D61;
+}
+
+/* Large Results Text */
+.results-text {
+    font-size: 28px; /* Larger font size for results */
+    font-weight: bold;
+    color: #B33939; /* Dark red for results text */
+    margin-top: 15px;
+}
+
+/* Roll Count Input */
+#rollCount {
+    width: 50%;
+    padding: 5px;
+    margin-top: 10px;
+    border: 2px solid #8B4D61;
+    border-radius: 5px;
+    background-color: #ECE1D7;
+    color: #4B2840;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Rolling Simulator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Dice Rolling Simulator</h1>
+        <div class="main-content">
+            
+            <!-- Dice Selection Panel -->
+            <div class="dice-panel">
+                <h2>Select Dice and Roll</h2>
+                
+                <!-- Roll Count Input -->
+                <div class="input-group">
+                    <label for="rollCount">Number of Rolls:</label>
+                    <input type="number" id="rollCount" placeholder="Enter roll count" min="1" required>
+                </div>
+                
+                <!-- Dice Buttons -->
+                <div class="dice-buttons">
+                    <button type="button" onclick="rollPresetDice(20)">d20</button>
+                    <button type="button" onclick="rollPresetDice(12)">d12</button>
+                    <button type="button" onclick="rollPresetDice(10)">d10</button>
+                    <button type="button" onclick="rollPresetDice(8)">d8</button>
+                    <button type="button" onclick="rollPresetDice(6)">d6</button>
+                    <button type="button" onclick="rollPresetDice(4)">d4</button>
+                </div>
+                
+                <!-- Custom Dice Input -->
+                <form method="POST" class="custom-dice-form">
+                    <label for="sides">Custom Die:</label>
+                    <input type="number" id="sides" name="sides" placeholder="Enter sides" required>
+                    <label for="number">Number of Rolls:</label>
+                    <input type="number" id="number" name="number" placeholder="Enter roll count" min="1" required>
+                    <button type="submit">Roll</button>
+                </form>
+            </div>
+            
+            <!-- Results Panel -->
+            <div class="results-panel">
+                <h2>Results</h2>
+                {% if results %}
+                <p class="results-text">{{ results }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function rollPresetDice(sides) {
+            const rollCount = document.getElementById("rollCount").value || 1;
+
+            const form = document.createElement("form");
+            form.method = "POST";
+            form.style.display = "none";
+
+            const sidesInput = document.createElement("input");
+            sidesInput.name = "sides";
+            sidesInput.value = sides;
+
+            const numberInput = document.createElement("input");
+            numberInput.name = "number";
+            numberInput.value = rollCount;
+
+            form.appendChild(sidesInput);
+            form.appendChild(numberInput);
+            document.body.appendChild(form);
+            form.submit();
+        }
+    </script>
+</body>
+</html>
